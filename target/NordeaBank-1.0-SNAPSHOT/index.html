@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nordea Bank</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script src="js/banking.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 left-side">
+                    <p class="lead">Nordea Internet Banking</p>
+                    <hr color='#eee'>
+                    <div style="margin-top: 50px; text-align: center">
+                        <h3 style="">Online Realtime Balances and Transactions</h3>
+                    <p style="text-align: center">...To provide a convenient banking services to all and sundry.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="text-align: center">
+                                <p>&nbsp;</p>
+                                <img src="https://vignette.wikia.nocookie.net/logopedia/images/4/44/Nordea_logo.png/revision/latest?cb=20160612064603" alt="Nordea" />
+                                
+                                <p style="">Please type your user ID and use the keypad to enter your password.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12" id="login_frm_div" class="well">
+                            <form method="post" id="login_frm" class="form-horizontal" action="api/customers/login">
+                                <div class="field">
+                                    <label for="email">Person Number/Email</label>
+                                    <br>
+                                    <input type="text" name="email" class="form-control" placeholder="Person Number or Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <br>
+                                    <input class="password form-control" type="password" name="password" placeholder="Enter your password..">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-danger" form="form1" value="Log in">
+                                    <a href="#" class="btn btn-success float-right" onclick="showRegistrationForm()">New Customer? Register Here</a>
+                                </div>
+
+                            </form>
+                            <br>
+                            <br>
+                        </div>
+
+                        <div class="col-md-12" id="signup_frm_div" style="display: none">
+                            <form class="form-horizontal" id="signup_frm">
+
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <br>
+                                    <input required type="text" id="firstname" name="firstname" placeholder="Enter your first name.." class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastname">Last Name</label>
+                                    <br>
+                                    <input required type="text" id="lastname" name="lastname" placeholder="Enter your last name.." class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <br>
+                                    <input required type="text" id="address" name="address" placeholder="Enter your address.." class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <br>
+                                    <input required type="text" id="email" name="email" placeholder="Enter your email.." class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="account_type">Account Type</label>
+                                    <br>
+                                    <select required id='account_type' name="account_type" class="form-control">
+                                        <option value="">Select Account Type</option>
+                                        <option value="1">Savings</option>
+                                        <option value="2">Current</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <br>
+                                    <input required class="form-control" type="password" name="password" id="password" placeholder="Enter your password..">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Confirm Password</label>
+                                    <br>
+                                    <input required class="form-control" type="password" name="password2" id="password2" placeholder="Retype your password..">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" id="btn_signup" class="btn btn-primary" > Sign Up </button>
+                                    <a href="#" class="btn btn-danger float-right" onclick="showLogInForm()">Already a member? Log in here</a>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+.left-side {
+    background-color: #9966ff;
+    min-height: 750px;
+    color: #fff;
+
+}
+
+.container {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.lead {
+    color: #fff;
+    text-align: center;
+    font-family: fantasy;
+    padding: 20px 0px 20px 0px;
+    font-size: xx-large;
+    font-weight: bold
+}
+
+.subheader {
+    padding: 50px 0;
+    background-image: linear-gradient(rgba(8, 4, 0, 0.53), rgba(2, 0, 1, 0.51)), url(../img/privacy-subheader.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.cent {
+    text-align: center;
+    color: #fff;
+}
+
+.copyright {
+    padding-top: 20px;
+    background-color: #2b2a2a;
+    color: #bcbcbc;
+}
+
+.menu-list {
+    list-style: none;
+    line-height: 40px;
+}
+
+.menu-list >li {
+    display: block;
+    border-bottom: solid 1px #fff;
+    border-left: solid 1px #fff;
+    border-right: solid 1px #fff;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: fantasy
+    /*border: solid 1px #fff*/
+}
+
+.menu-list >li >a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-list >li >a :hover {
+    color: red;
+}
+
+#currentDate {
+    font-size: medium
+}

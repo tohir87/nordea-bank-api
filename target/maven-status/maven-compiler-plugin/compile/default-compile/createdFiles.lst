@@ -1,0 +1,6 @@
+com/mycompany/nordeabankapi/service/AccountService.class
+com/mycompany/nordeabankapi/resources/TransactionResource.class
+com/mycompany/nordeabankapi/service/TransactionService.class
+com/mycompany/nordeabankapi/model/Transaction.class
+com/mycompany/nordeabankapi/resources/AccountResource.class
+com/mycompany/nordeabankapi/model/Account.class
