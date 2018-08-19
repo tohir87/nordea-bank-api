@@ -32,6 +32,7 @@ public class CustomerService {
      * @param address
      * @param email
      * @param password 
+     * @param accountType 
      */
     public void addCustomer(String firstname, String lastname, String address, String email, String password, int accountType) {
         Customer customer = new Customer(firstname, lastname, address,email, password);
@@ -60,8 +61,13 @@ public class CustomerService {
     // Return a specific user of the service
     public Customer getCustomer(int id) {
         
+        try {
+            list.get(id - 1);
+        } catch(IndexOutOfBoundsException Ex) {
+            System.out.println(Ex.getMessage());
+            return null;
+        }
         return list.get(id - 1);
-        
     }
     
 }

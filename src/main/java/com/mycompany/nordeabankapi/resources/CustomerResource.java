@@ -58,8 +58,6 @@ public class CustomerResource {
             String email = info.getQueryParameters().getFirst("email");
             String password = info.getQueryParameters().getFirst("password");
             String accountType = info.getQueryParameters().getFirst("account_type");
-            
-            System.out.println(firstname);
 
             if (firstname.isEmpty() || lastname.isEmpty()
                     || address.isEmpty() || email.isEmpty()

@@ -46,8 +46,8 @@
                 <div class="col-md-9">
                     <%@include file="top_menu.html" %>
                     
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row" ng-app='banking' ng-controller="transferCtrl">
+                        <div class="col-md-5">
                             <div class="box box-bordered">
                                 <div class="box-title">
                                     <h4>Fund Transfer</h4>
@@ -64,6 +64,7 @@
                                             <br>
                                             <select required id='account_type' name="account_type" class="form-control">
                                                 <option value="">Select Recipient</option>
+                                                <option ng-repeat="acct in accounts" value="{{acct.accountNo}}">{{acct.accountNo}}</option>
                                             </select>
                                         </div>
 
@@ -77,7 +78,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5" ng-app='banking' ng-controller="accountCtrl">
+                        <div class="col-md-6">
                             <h4>Recent Transactions</h4>
                             <table class="table table-stripped table-condensed table-bordered">
                                 <thead>
@@ -88,10 +89,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="acct in accounts">
-                                        <td>{{account_types[acct.accountType]}}</td>
-                                        <td>{{acct.accountNo}}</td>
-                                        <td>{{acct.sortCode}}</td>
+                                    <tr ng-repeat="trans in transactions">
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
                                     </tr>
                                 </tbody>
                             </table>

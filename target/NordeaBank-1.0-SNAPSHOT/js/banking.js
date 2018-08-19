@@ -27,6 +27,33 @@ bankingApp.controller('accountCtrl', function ($scope, $http) {
 
 });
 
+bankingApp.controller('transferCtrl', function ($scope, $http) {
+
+
+    $scope.blank = {};
+    $scope.accounts = [];
+    $scope.transaction_types = {1 : 'Credit', 2 : 'Debit'};
+
+    var getSiteUrl = function () {
+        return window.location.protocol + '//' + window.location.host + '/';
+    };
+
+    $scope.fetchAccounts = function () {
+
+        $scope.myPromise = $http.get(getSiteUrl() + 'api/account/all')
+                .success(function (response) {
+                    console.log(response);
+                    $scope.accounts = response;
+                }).error(function (response) {
+            console.log("Unable to load customers accounts");
+        });
+    };
+
+    $scope.fetchAccounts();
+
+
+});
+
 // jquery scripts
 function showRegistrationForm() {
     $("#login_frm_div").hide();

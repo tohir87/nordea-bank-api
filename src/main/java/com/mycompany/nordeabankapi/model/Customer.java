@@ -20,8 +20,8 @@ public class Customer implements Serializable, DAO {
 
     public Customer(String firstname, String lastname, String address, String email, String password) {
 //        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.address = address;
         this.email = email;
         this.password = password;
@@ -36,8 +36,8 @@ public class Customer implements Serializable, DAO {
             Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
             PreparedStatement pstmt = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             // set parameters for statement
-            pstmt.setString(1, this.firstname);
-            pstmt.setString(2, this.lastname);
+            pstmt.setString(1, this.firstName);
+            pstmt.setString(2, this.lastName);
             pstmt.setString(3, this.email);
             pstmt.setString(4, this.address);
             pstmt.setString(5, this.password);
@@ -65,11 +65,11 @@ public class Customer implements Serializable, DAO {
     }
 
     public void setFirstName(String firstname) {
-        this.firstname = firstname;
+        this.firstName = firstname;
     }
 
     public void setLastName(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
     }
 
     public void setAddress(String address) {
@@ -90,11 +90,11 @@ public class Customer implements Serializable, DAO {
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
     public String getLasstname() {
-        return lastname;
+        return lastName;
     }
 
     public String getAddress() {
@@ -111,7 +111,7 @@ public class Customer implements Serializable, DAO {
 
     @Override
     public String toString() {
-        return "Customer{" + "id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", address=" + address + ", email=" + email + ", password=" + password + '}';
+        return "Customer{" + "id=" + id + ", firstname=" + firstName + ", lastname=" + lastName + ", address=" + address + ", email=" + email + ", password=" + password + '}';
     }
 
     public boolean hasAccount(int accId) {
@@ -127,8 +127,8 @@ public class Customer implements Serializable, DAO {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String address;
     private String email;
     private String password;
